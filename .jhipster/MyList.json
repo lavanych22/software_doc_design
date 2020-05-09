@@ -1,0 +1,35 @@
+{
+    "name": "MyList",
+    "fields": [
+        {
+            "fieldName": "userID",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "movie",
+            "otherEntityRelationshipName": "myList",
+            "relationshipName": "movie"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "netflixUser",
+            "otherEntityRelationshipName": "myList",
+            "relationshipName": "netflixUser",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200503190700",
+    "entityTableName": "my_list",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

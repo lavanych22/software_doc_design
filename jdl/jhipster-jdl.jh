@@ -1,0 +1,75 @@
+entity NetflixUser {
+	id Long
+    name String required maxlength(100)
+    bio String maxlength(1000)
+    password String required unique maxlength(50)
+    birthDate ZonedDateTime
+    category Category
+}
+
+entity MyList {
+	userID Long
+
+}
+
+entity SavedSearch {
+	id Long
+    userID Long
+    search String maxlength(500)
+}
+
+entity Movie {
+	id Long
+    name String required maxlength(100)
+    description String required maxlength(1000)
+    releaseDate ZonedDateTime
+    type Type
+    genre Genre
+    creator String required maxlength(100)
+    cast String required maxlength(200)
+    rating Float
+    link String required maxlength(1000)
+    availableInHD AvailableInHD
+}
+
+entity Episode {
+	id Long
+    name String required maxlength(100)
+    description String required maxlength(1000)
+    producer String required maxlength(100)
+    releaseDate ZonedDateTime
+    videoURL String required maxlength(1000)
+}
+
+enum Category {
+	Child, Adult
+}
+
+enum Genre {
+	Action, Anime, Comedy, Crime
+}
+
+enum Type {
+	Series, Film
+}
+
+enum AvailableInHD {
+	Yes, No
+}
+
+relationship OneToMany {
+	NetflixUser{SavedSearch} to SavedSearch{NetflixUser}
+    MyList{Movie} to Movie{MyList}
+    Movie{Episode} to Episode{Movie}
+}
+
+relationship OneToOne {
+	NetflixUser{MyList} to MyList{NetflixUser}
+}
+
+filter Movie, Episode
+paginate Movie, Episode with infinite-scroll
+service all with serviceImpl
+
+
+

@@ -1,0 +1,37 @@
+{
+    "name": "SavedSearch",
+    "fields": [
+        {
+            "fieldName": "userID",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "search",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "500"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "netflixUser",
+            "otherEntityRelationshipName": "savedSearch",
+            "relationshipName": "netflixUser",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200503190800",
+    "entityTableName": "saved_search",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

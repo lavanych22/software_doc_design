@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\webapp",
+    "\\src\\main\\webapp\\app",
+    "\\src\\main\\webapp\\app\\entities",
+    "\\src\\main\\webapp\\app\\entities\\movie",
+    "\\src\\main\\webapp\\app\\shared",
+    "\\src\\main\\webapp\\app\\shared\\model",
+    "\\src\\main\\webapp\\app\\shared\\model\\enumerations"
+  ],
+  "SelectedNode": "\\src\\main\\webapp\\app\\shared\\model\\enumerations",
+  "PreviewInSolutionExplorer": false
+}
